@@ -1,0 +1,32 @@
+{
+  "name": "bookstore-backend",
+  "version": "1.0.0",
+  "description": "Bookstore API with Fastify and Prisma",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "prisma migrate dev",
+    "seed": "tsx src/seed.ts",
+    "test": "echo \"Tests not yet implemented\" && exit 0",
+    "prisma:studio": "prisma studio",
+    "prisma:generate": "prisma generate"
+  },
+  "keywords": ["fastify", "prisma", "typescript"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^8.4.2",
+    "@prisma/client": "^5.7.1",
+    "fastify": "^4.25.1",
+    "zod": "^3.22.4",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "prisma": "^5.7.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

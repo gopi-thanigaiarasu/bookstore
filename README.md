@@ -5,6 +5,7 @@ A modern full-stack application with Node.js/Fastify backend, React/Vite fronten
 ## Tech Stack
 
 ### Backend
+
 - **Runtime**: Node.js + TypeScript
 - **Framework**: Fastify
 - **Database**: PostgreSQL
@@ -12,6 +13,7 @@ A modern full-stack application with Node.js/Fastify backend, React/Vite fronten
 - **Validation**: Zod
 
 ### Frontend
+
 - **Framework**: React 18 + TypeScript
 - **Build Tool**: Vite
 - **Styling**: TailwindCSS
@@ -43,6 +45,7 @@ docker-compose up -d
 ```
 
 This will start a PostgreSQL database with:
+
 - **Database**: `bookstore`
 - **User**: `dbuser`
 - **Password**: `dbpassword`
@@ -107,96 +110,3 @@ VITE_API_URL=http://localhost:3000
 - **`npm run build`** - Build for production
 - **`npm run preview`** - Preview production build
 - **`npm run test`** - Run tests
-
-## API Endpoints
-
-### Authors
-
-- `GET /api/authors` - List all authors
-- `GET /api/authors/:id` - Get author by ID
-- `POST /api/authors` - Create new author
-- `PUT /api/authors/:id` - Update author
-- `DELETE /api/authors/:id` - Delete author
-
-### Books
-
-- `GET /api/books` - List all books
-- `GET /api/books/:id` - Get book by ID
-- `POST /api/books` - Create new book
-- `PUT /api/books/:id` - Update book
-- `DELETE /api/books/:id` - Delete book
-
-## Data Models
-
-### Author
-```typescript
-{
-  id: number
-  name: string
-  bio: string
-  createdAt: Date
-  updatedAt: Date
-}
-```
-
-### Book
-```typescript
-{
-  id: number
-  title: string
-  authorId: number
-  description: string
-  publishedYear: number
-  createdAt: Date
-  updatedAt: Date
-}
-```
-
-## Features
-
-### Backend
-- ✅ RESTful API with Fastify
-- ✅ Request validation with Zod
-- ✅ Error handling (400, 404, 500)
-- ✅ Modular architecture (routes, services, repositories)
-- ✅ Type-safe database access with Prisma
-- ✅ Database migrations and seeding
-
-### Frontend
-- ✅ CRUD operations for Authors and Books
-- ✅ Loading states
-- ✅ Empty states
-- ✅ Error handling with toast notifications
-- ✅ Form validation with inline errors
-- ✅ Responsive design with TailwindCSS
-- ✅ Modern UI components
-
-## Development Workflow
-
-1. Make sure Docker is running and database is up
-2. Run backend in one terminal: `cd backend && npm run dev`
-3. Run frontend in another terminal: `cd frontend && npm run dev`
-4. Access the app at `http://localhost:5173`
-
-## Troubleshooting
-
-### Database Connection Issues
-- Ensure Docker is running: `docker ps`
-- Check database logs: `docker-compose logs postgres`
-- Verify connection string in `backend/.env`
-
-### Port Already in Use
-- Backend (3000): Change `PORT` in `backend/.env`
-- Frontend (5173): Vite will automatically try the next available port
-- Database (5432): Change port mapping in `docker-compose.yml`
-
-### Migration Issues
-```bash
-cd backend
-npx prisma migrate reset  # Reset database and rerun migrations
-npm run seed              # Reseed data
-```
-
-## License
-
-MIT
